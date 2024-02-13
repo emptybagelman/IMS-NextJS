@@ -11,7 +11,7 @@ import ExpandCollapseWidget from "@/components/ExpandCollapseWidget"
 export default function ProfileMain() {
   const { data: userRooms, loading, error, fetchRooms } = useUserRooms();
   const { user } = useAuthStore();
-  const { expandContainer } = useProfileToggle()
+  const { expandContainer }: any = useProfileToggle()
 
 
   useEffect(() => {

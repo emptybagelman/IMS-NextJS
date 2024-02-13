@@ -4,12 +4,13 @@ import { Comment } from "@/utils/interfaces"
 import styles from "../styles.module.scss"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
-import getSearchParams from "@/utils/searchParams"
+// import getSearchParams from "@/utils/useSearchParams"
 import CommentTile from "../CommentTile"
+import { useSearchParams } from "next/navigation"
 
 export default function CommentList () {
 
-    const roomid = getSearchParams()
+    const roomid = useSearchParams().get("roomid")
 
     const {data, isLoading, isError} = useQuery({
         queryKey: ["comments", roomid],
@@ -30,9 +31,9 @@ export default function CommentList () {
     return (
         <div className={styles.comment_array_wrapper}>
             {data?.map(comment => (
-                <CommentTile comment={comment}/>
+                <CommentTile key={comment.id} comment={comment}/>
             ))}
-            { data?.length < 1 && <div className={styles.no_comments}>No comments yet!</div>}
+            { data && data?.length < 1 && <div className={styles.no_comments}>No comments yet!</div>}
         </div>
     )
 }

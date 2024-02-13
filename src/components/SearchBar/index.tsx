@@ -11,7 +11,7 @@ export default function SearchBar({category}: {category:string}){
 
     const [searchInput, setSearchInput] = useState<string>("")
     const debouncedInput = useDebounce(searchInput, 500)
-    const { setSearchRooms } = useSearchContext()
+    const { setSearchRooms }: any = useSearchContext()
 
     async function handleSearch(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
         // pass filtered values up to parent / render them on page. Could redirect to a regular search page??

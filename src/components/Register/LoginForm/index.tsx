@@ -39,7 +39,7 @@ export default function LoginForm(){
 
             <button type="submit">Enter</button>
 
-            <span>Haven't made an account?
+            <span>Haven&apos;t made an account?
                 <a href="/signup">Sign up here!</a>
             </span>
 

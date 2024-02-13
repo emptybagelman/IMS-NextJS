@@ -5,7 +5,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import axios from "axios"
 import useAuthStore from "@/utils/authStore"
 import { User, Comment } from "@/utils/interfaces"
-import getSearchParams from "@/utils/searchParams"
+// import getSearchParams from "@/utils/useSearchParams"
+import { useSearchParams } from "next/navigation"
 
 export default function AddCommentForm() {
 
@@ -14,9 +15,9 @@ export default function AddCommentForm() {
 
     const { user } = useAuthStore()
     const [data, setData] = useState<User>()
-    const roomid = getSearchParams()
+    const roomid = useSearchParams().get("roomid")
 
-    const [formInput, setFormInput] = useState<string | null>()
+    const [formInput, setFormInput] = useState<string | undefined>()
 
     // const [formData, setFormData] = useState<Comment | null>(null)
 

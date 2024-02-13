@@ -11,7 +11,7 @@ export default function Category({ item }: any){
     return (
         <Link href={`/explore/${title.toLowerCase()}`}>
             <div className={styles.explore_item}>
-                <LazyImage src={image}/>
+                <LazyImage src={image} alt={"beans"}/>
                 <h2 className={styles.title}>{title}</h2>
             </div>
         </Link>

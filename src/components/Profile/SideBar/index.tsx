@@ -32,7 +32,7 @@ function RoomName(room_id: any){
 export default function SideBar(){
 
     const { user } = useAuthStore()
-    const { expandContainer } = useProfileToggle()
+    const { expandContainer }: any = useProfileToggle()
     const [comments,setComments] = useState<Comment[]>()
 
     const getComments = useCallback(async () => {
@@ -53,15 +53,7 @@ export default function SideBar(){
                 {
                     comments ?
                     comments.map((c:Comment, index:number) => (
-                        // <div key={index} className={styles.comment} >
-                        //     <div className={styles.comment_header} >
-                        //         <RoomName room_id={c.room_id}/>
-                        //         <span className={styles.date}>{convertDate(c.date)}</span>
-                        //     </div>
-                        //     <p>{c.comment}</p>
-
-                        // </div>
-                        <CommentTile comment={c}/>
+                        <CommentTile key={c.id} comment={c}/>
                     ))
                     : ""
                 }

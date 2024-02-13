@@ -4,7 +4,10 @@ import { createContext, useContext, useState } from "react";
 
 type toggle = "comments" | "rooms" | "likes"
 
-const ProfileContext = createContext()
+const ProfileContext = createContext({
+    expandContainer: "rooms",
+    setExpandContainer: (value: toggle) => {}
+})
 
 export function ProfileToggleProvider({children}: {children: React.ReactNode}){
     const [expandContainer, setExpandContainer] = useState<toggle>("rooms")

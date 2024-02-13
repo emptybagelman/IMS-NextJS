@@ -45,7 +45,7 @@ export default function RoomCard({ room, hovered, setHovered }: RoomCardProps){
         onClick={clickRoom}
         >
             {/* <img className={styles.image} src={room.src} alt={room.alt} /> */}
-            <LazyImage src={room.src}/> 
+            {room.src && <LazyImage src={room.src} alt={"alt"}/> }
 
             {/* div > img + img  */}
 

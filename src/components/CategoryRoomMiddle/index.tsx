@@ -16,7 +16,7 @@ export default function CategoryRoomMiddle({ rooms }: any){
 
     const [ hovered, setHovered ] = useState<Hovered>({ hoveredId: null, roomClicked: null })
     const router = useSearchParams().get("roomid")
-    const { searchRooms } = useSearchContext()
+    const { searchRooms }: any = useSearchContext()
 
     return (
         <>

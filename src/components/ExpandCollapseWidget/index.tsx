@@ -3,7 +3,7 @@ import styles from "./style.module.scss"
 
 export default function ExpandCollapseWidget({tab}: {tab: React.ReactNode}){
 
-    const { expandContainer, setExpandContainer } = useProfileToggle()
+    const { expandContainer, setExpandContainer }: any = useProfileToggle()
 
     function handleToggle(){
         switch(tab){
