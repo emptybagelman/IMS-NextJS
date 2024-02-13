@@ -1,0 +1,23 @@
+@import "../../Styles/mixins/flex";
+
+.profile_wrapper{
+    min-height: 100dvh;
+    padding-top: 100px;
+    margin: 0px 50px;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(100px,1fr));
+    gap: 20px;
+
+    &>section{
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .profile_wrapper{
+        @include flex-column-align-center;
+        margin: 0;
+        padding: 50px;
+    }
+}
+

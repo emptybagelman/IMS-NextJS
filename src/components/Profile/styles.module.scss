@@ -1,0 +1,204 @@
+@import "../../Styles/mixins/flex";
+@import "../../Styles/mixins/colors";
+
+.top_bar{
+    @include flex-align-center;
+    justify-content: space-between;
+    background: var(--bg);
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid var(--bg-light);
+    height: 200px;
+    grid-column: span 5;
+
+    &>div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 20px;
+        position: relative;
+       
+        div{
+            @include flex-column;
+            align-items: flex-start;
+            h3{
+                font-size: 3rem;
+                line-height: 2.4rem;
+            }
+            span{
+                margin-top: 5px;
+                color: var(--darkbeige);
+            }
+        }
+
+        img{
+            width: 100px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.sidebar{
+    @include flex-column-align-center;
+    grid-row: 2;
+    background: var(--bg);
+    border: 2px solid var(--bg-light);
+    min-height: 100dvh;
+    min-width: 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+
+    h3{
+        font-size: 1.6rem;
+        margin: 25px;
+        text-align: center;
+    }
+    &>div{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px 25px 15px;
+        overflow: hidden;
+
+        // .comment{
+        //     @include flex-column;
+        //     box-sizing: border-box;
+        //     margin-top: 20px;
+        //     padding: 5px 10px;
+        //     min-width: 200px;
+        //     width: calc(100% - 20px);
+        //     flex: 1;
+        //     overflow: hidden;
+
+        //     @media (max-width: 1380px){
+        //         width: 100%;
+        //     }
+
+        //     &:hover{
+        //         background-color: var(--bg-light);
+        //         filter: brightness(1.4);
+        //         cursor: pointer;
+        //     }
+            
+        //     .comment_header{
+        //         .room_name{
+        //             font-size: 1.2rem;
+        //             margin-right: 10px;
+        //             white-space: nowrap;
+        //         }
+        //         .date{
+        //             font-size: 0.8rem;
+        //             color: var(--darkbeige);
+        //         }
+
+        //         @media (max-width: 1050px){
+        //             @include flex-column;
+        //             width: 100%;
+        //         }
+        //     }
+
+        //     p{
+        //         padding: 0px 25px 15px;
+        //         white-space: nowrap;
+        //         max-width: 15ch;
+        //         overflow: hidden;
+        //         text-overflow: ellipsis;
+        //     }
+
+        // }
+    }
+
+}
+
+.main_grid{
+    background: var(--bg);
+    border: 2px solid var(--bg-light);
+    min-height: 100dvh;
+    padding: 25px;
+    position: relative;
+
+    .room_wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        gap: 20px;
+    }
+
+    h3{
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .profile_card_wrapper{
+        position: relative;
+        overflow: hidden;
+        transition: 0.1s ease;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:not(:hover){
+            filter: brightness(0.8);
+        }
+    
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    
+        &>.item_caption{
+            @include main-palette-inverse;
+            position: absolute;
+            bottom: 0;
+    
+            outline: none;
+            opacity: 0.9;
+            width: 100%;
+            height: 50px;
+    
+            transition: 0.2s ease;
+    
+            h2{
+                font-size: 1.2rem;
+                color: var(--beige);
+                font-weight: normal;
+                padding: 10px;
+                white-space: nowrap;
+                text-align: start;
+                padding-left: 20px;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width:900px){
+    .top_bar, .sidebar, .main_grid{
+        width: 100%;
+    }
+
+    .sidebar, .main_grid{
+        padding: 25px;
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width:370px){
+    .top_bar{
+        flex-direction: column;
+        justify-content: center;
+        span{
+            margin-top: 10px;
+        }
+        div{
+            @include flex-column-align-center;
+
+            div{
+                align-items: center;
+            }
+        }
+    }
+}

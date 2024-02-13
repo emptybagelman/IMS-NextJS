@@ -1,0 +1,67 @@
+@import "../../Styles/mixins/colors";
+@import "../../Styles/mixins/flex";
+
+.searchbar_wrapper{
+    form{
+        display: flex;
+        width: 100%;
+        input{
+            flex-grow: 1;
+            border-radius: 25px 0px 0px 25px;
+            &:focus-visible{
+                background-color: var(--bg-light);
+            }
+        }
+
+        &>div{
+            position: relative;
+
+            button{
+                @include main-palette;
+                border-radius: 0px 25px 25px 0px;
+                outline: solid 2px var(--beige);
+                transition: var(--hover-transition);
+                
+                &:hover{
+                    @include main-palette-inverse;
+                    cursor: pointer;
+                }
+            }
+    
+            .clear_search_input{
+                @include flex-full-center;
+                @include main-palette;
+
+                --offset: 35px;
+
+                position: absolute;
+                top: 0;
+                // left: calc(-1 * var(--offset));
+                left: 0;
+                height: 100%;
+                width: var(--offset);
+                outline: none;
+                border-right: solid 2px var(--bg);
+                transition: var(--hover-transition);
+                animation: inputCloseSlider ease 0.2s forwards;
+
+                &:hover{
+                    @include main-palette-inverse;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .searchbar_wrapper{
+        margin-top: 15px;
+    }
+}
+
+@keyframes inputCloseSlider {
+    from {left: 0}
+    to {left: calc(-1 * var(--offset))}
+}

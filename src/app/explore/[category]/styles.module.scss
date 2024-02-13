@@ -1,0 +1,21 @@
+@import "../../../Styles/mixins/flex";
+
+.main_wrapper{
+    padding: 75px 20px;
+}
+
+.page_wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 400px) {
+    .page_wrapper {
+        @include flex-column-align-center;
+        &>div {
+            min-width: 300px;
+        }
+    }
+}

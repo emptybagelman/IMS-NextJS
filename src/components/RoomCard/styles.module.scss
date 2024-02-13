@@ -1,0 +1,47 @@
+@import "../../Styles/mixins/flex";
+@import "../../Styles/mixins/colors";
+
+.room_container{
+    @include flex-column-align-center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .item_caption{
+        @include main-palette-inverse;
+
+        position: absolute;
+        top: 80%;
+
+        outline: none;
+        opacity: 0.9;
+        width: 100%;
+        height: 100%;
+
+        transition: 0.2s ease;
+
+        h2{
+            font-size: 1.6rem;
+            color: var(--beige);
+            font-weight: normal;
+            padding: 10px;
+            white-space: nowrap;
+        }
+
+        p{
+            padding-left: 25px;
+            font-size: 1rem;
+        }
+    }
+
+    &:hover .item_caption{
+        top: 40%;
+    }
+
+}

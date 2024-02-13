@@ -1,0 +1,50 @@
+@import "../Styles/mixins/flex";
+@import "../Styles/mixins/colors";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Oswald:wght@200&family=Poppins:wght@300&family=Raleway:wght@300&family=Space+Grotesk&display=swap");
+
+
+:root{
+  --bg: #14080e;
+  --bg-light: rgb(27, 17, 22);
+  --bg-gradient: linear-gradient(180deg, var(--bg) 50%, var(--bg-light) 90%);
+  --outline: rgba(20,8,14);
+  --outlinefocus: rgba(62,137,137);
+  --beige: #FAF8F2;
+  --darkbeige: #a5a4a3;
+  --beige-fade: rgba(249, 247, 240,0.2);
+  --font: 'Space Grotesk', sans-serif;
+  --active: hsla(244, 11%, 50%, 0.318);
+  --hover-transition: 0.2s ease;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+}
+
+*{
+  background-color: transparent;
+  color: var(--beige);
+  font-family: var(--font);
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+input{
+  @include main-palette-inverse;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+}
+
+button{
+  @include main-palette-inverse;
+  border-radius: 25px;
+  padding: 10px 25px;
+}
+
+label,h1,h2,h3,h4,p,span{
+  user-select: none;
+}

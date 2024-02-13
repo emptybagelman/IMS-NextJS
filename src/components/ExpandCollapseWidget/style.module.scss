@@ -1,0 +1,20 @@
+.expandcollapse_wrapper{
+    --dimensions: 50px;
+    display: block;
+    color: var(--biege);
+    text-align: center;
+    font-size: var(--dimensions);
+    width: var(--dimensions);
+    height: var(--dimensions);
+    line-height: 37.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover{
+        cursor: pointer;
+    }
+    @media screen and (max-width:900px){
+        display: none;
+    }
+}

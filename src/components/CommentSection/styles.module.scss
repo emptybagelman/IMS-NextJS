@@ -1,0 +1,103 @@
+@import "../../Styles/mixins/flex";
+@import "../../Styles/mixins/colors";
+
+.comments_wrapper{
+    @include flex-column-align-center;
+    @include main-palette-inverse;
+
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 25px;
+    padding-top: 100px;
+    background-color: var(--bg);
+    opacity: 0.9;
+    pointer-events: auto;
+
+    .close{
+        @include flex-full-center;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        outline: solid 2px var(--beige);
+        border-radius: 50%;
+        padding: 10px;
+
+        &:hover{
+            @include main-palette;
+            transition: var(--hover-transition);
+            cursor: pointer;
+            svg{
+                filter: invert(1);
+            }
+        }
+    }
+
+    &>h2{
+        font-size: 2rem;
+        margin: 25px;
+    }
+
+    form{
+        @include flex-column;
+
+        &>*{
+            margin: 10px;
+        }
+
+        textarea{
+            border-radius: 25px;
+            padding: 15px;
+            outline: solid 2px var(--beige);
+            border: none;
+        }
+
+        button{
+            &:hover{
+                @include main-palette;
+                cursor: pointer;
+                transition: var(--hover-transition);
+            }
+        }
+    }
+
+    .comment_array_wrapper{
+        width: 90%;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .no_comments{
+        @include flex-full-center;
+    }
+}
+
+.comment_wrapper{
+    min-width: 200px;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 5px 10px;
+
+    div{
+        @include flex-align-center;
+        h2{
+            font-size: 1.2rem;
+            padding-right: 10px;
+        }
+
+        span{
+            color: var(--darkbeige);
+            font-size: 0.8rem;
+        }
+    }
+
+    p{
+        white-space: nowrap;
+        max-width: 15ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

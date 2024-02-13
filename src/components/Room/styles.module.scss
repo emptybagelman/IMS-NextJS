@@ -1,0 +1,23 @@
+.card{
+    background-color: cadetblue;
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .imgs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        img{
+            width: 200px;
+        }
+    }
+}

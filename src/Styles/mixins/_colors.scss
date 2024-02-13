@@ -1,0 +1,15 @@
+@mixin main-palette{
+    color: var(--bg);
+    background-color: var(--beige);
+    outline: solid 2px var(--bg);
+    border: none;
+    font-family: var(--font);
+}
+
+@mixin main-palette-inverse{
+    color: var(--beige);
+    background-color: var(--bg);
+    outline: solid 2px var(--beige);
+    border: none;
+    font-family: var(--font);
+}

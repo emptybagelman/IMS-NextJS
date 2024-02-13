@@ -1,0 +1,50 @@
+@import "../../Styles/mixins/flex";
+@import "../../Styles/mixins/colors";
+
+.env_map_grid{
+    @include flex-column-full-center;
+    width: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: var(--beige-fade);
+
+    .widget_overlay{
+        position: absolute;
+        width: 100dvw;
+        height: 100dvh;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+        pointer-events: none;
+        
+        .buttons {
+            @include flex-column-align-center;
+            position: absolute;
+            z-index: 2;
+
+            button{
+                padding: 10px;
+                border-radius: 50%;
+                line-height: 0.7rem;
+                margin: 5px;
+                cursor: pointer;
+                pointer-events: auto;
+
+                &:hover svg{
+                    filter: invert(1);
+                }
+
+                &:hover{
+                    @include main-palette;
+                    transition: var(--hover-transition)
+                }
+            }
+        }
+    }
+}
+
+.env_map{
+    @include flex-full-center;
+}

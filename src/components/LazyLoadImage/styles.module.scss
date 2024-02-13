@@ -1,0 +1,25 @@
+.lazy_image_wrapper{
+    position: relative;
+    width: 100%;
+    background-color: #25141a;
+    border-radius: 25px;
+}
+
+.fadeAnim {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .lazy_image_wrapper{
+        min-width: 200px;
+    }
+}

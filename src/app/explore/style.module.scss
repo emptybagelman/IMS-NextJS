@@ -1,0 +1,21 @@
+@import "../../Styles/mixins/flex";
+@import "../../Styles/mixins/colors";
+
+.explore_wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(700px,1fr));
+    grid-gap: 20px;
+    padding: 75px 15px 25px 15px;
+}
+
+@media (max-width: 900px){
+    .explore_wrapper{
+        padding: 100px 15px 25px 15px;
+    }
+}
+
+@media screen and (max-width: 730px){
+    .explore_wrapper {
+        grid-template-columns: repeat(1,minmax(200px,1fr));
+    }
+}
