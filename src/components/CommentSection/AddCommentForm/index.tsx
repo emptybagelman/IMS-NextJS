@@ -7,10 +7,11 @@ import useAuthStore from "@/utils/authStore"
 import { User, Comment } from "@/utils/interfaces"
 // import getSearchParams from "@/utils/useSearchParams"
 import { useSearchParams } from "next/navigation"
+import { useWindowSize } from "@/utils/windowSize"
 
 export default function AddCommentForm() {
 
-    const [input,setInput] = useState<string>("")
+    const windowSize = useWindowSize()
     const queryClient = useQueryClient()
 
     const { user } = useAuthStore()
@@ -71,11 +72,12 @@ export default function AddCommentForm() {
             <textarea
                 name="textarea"
                 id="comment_input"
-                cols={30}
+                cols={windowSize.width/30}
                 rows={3}
                 placeholder=">"
                 value={formInput}
                 onChange={e => setFormInput(e.target.value)}
+                maxLength={80}
                 >
             </textarea>
 

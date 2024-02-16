@@ -28,7 +28,7 @@ export default function ProfileMain() {
 
   return (
     <section className={styles.main_grid} style={expandContainer === "rooms" ? {"gridColumn": "span 4"} : {"gridColumn": "span 2"}}>
-      <ExpandCollapseWidget tab="rooms"/>
+      {/* <ExpandCollapseWidget tab="rooms"/> */}
       <h3>Your Rooms</h3>
       <div className={styles.room_wrapper}>
         {userRooms && userRooms.map((room) => (

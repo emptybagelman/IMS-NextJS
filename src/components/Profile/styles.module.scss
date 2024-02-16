@@ -61,53 +61,6 @@
         width: 100%;
         padding: 10px 25px 15px;
         overflow: hidden;
-
-        // .comment{
-        //     @include flex-column;
-        //     box-sizing: border-box;
-        //     margin-top: 20px;
-        //     padding: 5px 10px;
-        //     min-width: 200px;
-        //     width: calc(100% - 20px);
-        //     flex: 1;
-        //     overflow: hidden;
-
-        //     @media (max-width: 1380px){
-        //         width: 100%;
-        //     }
-
-        //     &:hover{
-        //         background-color: var(--bg-light);
-        //         filter: brightness(1.4);
-        //         cursor: pointer;
-        //     }
-            
-        //     .comment_header{
-        //         .room_name{
-        //             font-size: 1.2rem;
-        //             margin-right: 10px;
-        //             white-space: nowrap;
-        //         }
-        //         .date{
-        //             font-size: 0.8rem;
-        //             color: var(--darkbeige);
-        //         }
-
-        //         @media (max-width: 1050px){
-        //             @include flex-column;
-        //             width: 100%;
-        //         }
-        //     }
-
-        //     p{
-        //         padding: 0px 25px 15px;
-        //         white-space: nowrap;
-        //         max-width: 15ch;
-        //         overflow: hidden;
-        //         text-overflow: ellipsis;
-        //     }
-
-        // }
     }
 
 }
@@ -134,6 +87,7 @@
         position: relative;
         overflow: hidden;
         transition: 0.1s ease;
+        border-radius: 20px;
 
         &:hover{
             cursor: pointer;

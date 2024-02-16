@@ -47,7 +47,7 @@ export default function SideBar(){
 
     return (
         <section className={styles.sidebar} style={expandContainer === "comments" ? {"gridColumn": "span 2"} : {"gridColumn": "1"}}>
-            <ExpandCollapseWidget tab="comments"/>
+            {/* <ExpandCollapseWidget tab="comments"/> */}
             <h3>Your Comments</h3>
             <div>
                 {

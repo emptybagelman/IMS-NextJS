@@ -48,3 +48,9 @@
 .env_map{
     @include flex-full-center;
 }
+
+@media screen and (min-width:900px){
+    .env_map_grid .widget_overlay{
+        top: 60px;
+    }
+}

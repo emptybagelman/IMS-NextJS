@@ -5,13 +5,15 @@
     @include flex-column-align-center;
     @include main-palette-inverse;
 
+    --br: 25px;
+
     position: absolute;
     width: 70%;
     height: 70%;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    border-radius: 25px;
+    border-radius: var(--br);
     padding-top: 100px;
     background-color: var(--bg);
     opacity: 0.9;
@@ -42,24 +44,32 @@
     }
 
     form{
-        @include flex-column;
+        @include flex-column-align-center;
+        min-width: 0;
 
         &>*{
             margin: 10px;
         }
 
         textarea{
-            border-radius: 25px;
+            // border-radius: var(--br);
+            border-radius: 10px;
+            margin: 15px;
             padding: 15px;
             outline: solid 2px var(--beige);
-            border: none;
+            border: none;   
+            min-width: 0;         
         }
 
         button{
+            width: 50%;
+            border-radius: 10px;
+            padding: 5px;
             &:hover{
                 @include main-palette;
                 cursor: pointer;
                 transition: var(--hover-transition);
+                
             }
         }
     }
@@ -75,29 +85,94 @@
     }
 }
 
-.comment_wrapper{
-    min-width: 200px;
-    width: calc(100% - 20px);
-    margin-bottom: 20px;
-    padding: 5px 10px;
+.comment_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
 
-    div{
-        @include flex-align-center;
-        h2{
-            font-size: 1.2rem;
-            padding-right: 10px;
+    .comment_edit_toggle{
+        
+        margin-right: 25px;
+        padding: 0px 10px 0px 10px;
+        position: relative;
+
+        &>span{
+            font-size: 2rem;
+            color: var(--darkbeige);
+
+            &:hover{
+                color: var(--beige);
+                cursor: pointer;
+            }
         }
 
-        span{
-            color: var(--darkbeige);
-            font-size: 0.8rem;
+        #button_delete_comment{
+            outline: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: firebrick;
+            border-radius: 10px;
+
+            &:hover{
+                filter: brightness(1.6);
+                cursor: pointer;
+            }
         }
     }
 
-    p{
-        white-space: nowrap;
-        max-width: 15ch;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .comment_wrapper{
+        min-width: 200px;
+        width: calc(100% - 20px);
+        // margin-bottom: 20px;
+        padding: 5px 10px;
+    
+        &>div{
+            @include flex-align-center;
+            h2{
+                font-size: 1.2rem;
+                padding-right: 10px;
+            }
+    
+            span{
+                color: var(--darkbeige);
+                font-size: 0.8rem;
+            }
+        }
+    
+        p{
+            white-space: nowrap;
+            max-width: 15ch;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
+
+// .comment_wrapper{
+//     min-width: 200px;
+//     width: calc(100% - 20px);
+//     margin-bottom: 20px;
+//     padding: 5px 10px;
+
+//     &>div{
+//         @include flex-align-center;
+//         h2{
+//             font-size: 1.2rem;
+//             padding-right: 10px;
+//         }
+
+//         span{
+//             color: var(--darkbeige);
+//             font-size: 0.8rem;
+//         }
+//     }
+
+//     p{
+//         white-space: nowrap;
+//         max-width: 15ch;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//     }
+// }
