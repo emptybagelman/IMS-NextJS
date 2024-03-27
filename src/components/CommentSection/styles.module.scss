@@ -90,14 +90,23 @@
     justify-content: space-between;
     align-items: center;
     margin: 15px;
+    min-width: 0;
+    width: 100%;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &:not(:hover) .button_edit_selector{
+        display: none;
+    }
 
     .comment_edit_toggle{
-        
-        margin-right: 25px;
         padding: 0px 10px 0px 10px;
-        position: relative;
+        display: flex;
+        align-items: center;
 
-        &>span{
+        .button_edit_selector{
             font-size: 2rem;
             color: var(--darkbeige);
 
@@ -107,13 +116,29 @@
             }
         }
 
-        #button_delete_comment{
+        .button_delete_comment{
             outline: none;
-            position: absolute;
             top: 0;
             right: 0;
             background-color: firebrick;
             border-radius: 10px;
+            padding: 5px 10px;
+            height: 35px;
+
+            &:hover{
+                filter: brightness(1.6);
+                cursor: pointer;
+            }
+        }
+
+        .button_cancel {
+            outline: none;
+            padding: 5px;
+            margin: 5px;
+            color: var(--biege);
+            font-size: 24px;
+            font-weight: normal;
+            border-radius: 25px;
 
             &:hover{
                 filter: brightness(1.6);
@@ -125,11 +150,14 @@
     .comment_wrapper{
         min-width: 200px;
         width: calc(100% - 20px);
-        // margin-bottom: 20px;
         padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
     
-        &>div{
-            @include flex-align-center;
+        .mediary{
+            &>div{
+                display: flex;
+            }
             h2{
                 font-size: 1.2rem;
                 padding-right: 10px;
@@ -149,30 +177,3 @@
         }
     }
 }
-
-// .comment_wrapper{
-//     min-width: 200px;
-//     width: calc(100% - 20px);
-//     margin-bottom: 20px;
-//     padding: 5px 10px;
-
-//     &>div{
-//         @include flex-align-center;
-//         h2{
-//             font-size: 1.2rem;
-//             padding-right: 10px;
-//         }
-
-//         span{
-//             color: var(--darkbeige);
-//             font-size: 0.8rem;
-//         }
-//     }
-
-//     p{
-//         white-space: nowrap;
-//         max-width: 15ch;
-//         overflow: hidden;
-//         text-overflow: ellipsis;
-//     }
-// }
